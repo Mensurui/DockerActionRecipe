@@ -9,6 +9,8 @@ inputs:
 outputs:
   answer:
     description: 'The answer to everything(always 42)'
+  name:
+    description: 'The maintainers name'
 
 runs:
   using: docker
