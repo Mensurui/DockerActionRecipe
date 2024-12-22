@@ -1,0 +1,11 @@
+name: Action CI
+on: [push]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Run my own container actions
+        uses: ./
+        with:
+          who-to-greet: '@wulfland'
