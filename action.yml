@@ -6,6 +6,10 @@ inputs:
     required: true
     default: "World"
 
+outputs:
+  answer:
+    description: 'The answer to everything(always 42)'
+
 runs:
   using: docker
   image: 'Dockerfile'

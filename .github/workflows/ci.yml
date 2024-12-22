@@ -6,6 +6,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Run my own container actions
+        id: my-action
         uses: ./
         with:
           who-to-greet: '@wulfland'
+
+      - name: Output the answer
+        run: echo "The answer is ${{steps.my-action.outputs.answer}}"
+
+      - name: Test the container
+        if:  ${{ steps.my-action.outputs.answer != 42 }}
+        run: |
+          echo "::error file=entrypoint.sh,line=4,title=Error in container::The answer was not expected"
+          exit 1
+      
