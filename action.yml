@@ -1,5 +1,10 @@
 name: 'Docker Action Recipes'
 description: 'Greet Someone'
+branding:
+  icon: bell
+  color: green
+author: 'Mensur Khalid'
+
 inputs:
   who-to-greet:
     description: "Who to greet"
